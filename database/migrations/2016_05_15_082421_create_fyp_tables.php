@@ -21,7 +21,7 @@ class CreateFypTables extends Migration
             $table->string('status');
             $table->timestamp('starttime');
             $table->timestamp('endtime');
-            
+            $table->timestamps();     
         });
         
         Schema::create('stops', function (Blueprint $table) {
@@ -29,7 +29,7 @@ class CreateFypTables extends Migration
             $table->string('stopname');
             $table->decimal('longitude', 10, 7);
             $table->decimal('latitude', 10, 7);
-
+$table->timestamps();
                     });
 
 
@@ -39,7 +39,7 @@ class CreateFypTables extends Migration
             $table->string('email');
             $table->string('name');
             $table->timestamp('installingdate');
-            
+            $table->timestamps();
         });
 
 
@@ -47,7 +47,7 @@ class CreateFypTables extends Migration
             $table->increments('id');
             $table->integer('bus_id')->unsigned();
             $table->integer('stop_id')->unsigned();
-
+$table->timestamps();
             $table->foreign('bus_id')
                 ->references('id')
                 ->on('buses');
@@ -61,6 +61,7 @@ class CreateFypTables extends Migration
 
                Schema::create('searches', function (Blueprint $table) {
             $table->integer('route_id')->unsigned();
+            $table->timestamps();
             $table->foreign('route_id')
                   ->references('id')
                   ->on('routes');

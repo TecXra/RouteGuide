@@ -12,6 +12,7 @@ Route::pattern('slug', '[0-9a-z-_]+');
 
 /***************    Site routes  **********************************/
 Route::get('/', 'HomeController@index');
+
 Route::get('home', 'HomeController@index');
 Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
@@ -19,6 +20,7 @@ Route::get('articles', 'ArticlesController@index');
 Route::get('article/{slug}', 'ArticlesController@show');
 Route::get('video/{id}', 'VideoController@show');
 Route::get('photo/{id}', 'PhotoController@show');
+
 
 Route::controllers([
     'auth' => 'Auth\AuthController',
@@ -28,9 +30,12 @@ Route::controllers([
 /***************    Admin routes  **********************************/
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
+    
+
+
     # Admin Dashboard
     Route::get('dashboard', 'Admin\DashboardController@index');
-
+    
     # Language
     Route::get('language/data', 'Admin\LanguageController@data');
     Route::get('language/{language}/show', 'Admin\LanguageController@show');
@@ -80,6 +85,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
 
 // Bus CRUD operation
+ 
  Route::get('bus', 'fypController@busdata');
  Route::post('bus', 'fypController@busstore');
  Route::get('bus/create','fypController@buscreate');
