@@ -84,13 +84,40 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
  Route::post('bus', 'fypController@busstore');
  Route::get('bus/create','fypController@buscreate');
  Route::get('bus/{id}/edit','fypController@busedit');
-Route::get('bus/{id}/delete', 'fypController@busdelete'); 
+ Route::get('bus/{id}/delete', 'fypController@busdelete'); 
+
+
+// Stop CRUD operation
+ Route::get('stop', 'fypController@stopdata');
+ Route::post('stop', 'fypController@stopstore');
+ Route::get('stop/create','fypController@stopcreate');
+ Route::get('stop/{id}/edit','fypController@stopedit');
+ Route::get('stop/{id}/delete', 'fypController@stopdelete'); 
+
+
+// Route CRUD operation
+ Route::get('route', 'fypController@routedata');
+ Route::post('route', 'fypController@routestore');
+ Route::get('route/create','fypController@routecreate');
+ Route::get('route/{id}/edit','fypController@routeedit');
+ Route::get('route/{id}/delete', 'fypController@routedelete'); 
 
 
 
+// AppUser CRUD operation
+ Route::get('appuser', 'fypController@appuserdata');
+ Route::post('appuser', 'fypController@appuserstore');
+ Route::get('appuser/create','fypController@appusercreate');
+ Route::get('appuser/{id}/edit','fypController@appuseredit');
+ Route::get('appuser/{id}/delete', 'fypController@appuserdelete'); 
 
 
 
-
+// Search CRUD operation
+ Route::get('search', 'fypController@searchdata');
+ Route::post('search', 'fypController@searchstore');
+ Route::get('search/create','fypController@searchcreate');
+ Route::get('search/{id}/edit','fypController@searchedit');
+ Route::get('search/{id}/delete', 'fypController@searchdelete'); 
 
 
