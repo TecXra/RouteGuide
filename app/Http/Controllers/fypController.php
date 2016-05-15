@@ -47,6 +47,11 @@ public function busupdate($id, Request $request)
    return "bus update";
   
 }
+public function busshow($id)
+{
+      return "specific bus";
+}
+
 public function busdelete($id)
 {
    
@@ -69,6 +74,11 @@ public function stopcreate()
 public function stopstore(Request $request)
 {
             return redirect('stop');
+}
+
+public function stopshow($id)
+{
+      return "specific stop";
 }
 
 public function stopedit($id)
@@ -117,6 +127,10 @@ public function routeedit($id)
 
 }
 
+public function routeshow($id)
+{
+      return "specific route";
+}
 
 public function routeupdate($id, Request $request)
 {
@@ -157,6 +171,10 @@ public function searchedit($id)
 }
 
 
+public function searchshow($id)
+{
+      return "specific search";
+}
 public function searchupdate($id, Request $request)
 {
    return "search update";
@@ -195,6 +213,10 @@ public function appuseredit($id)
 }
 
 
+public function appusershow($id)
+{
+      return "specific appuser";
+}
 public function appuserupdate($id, Request $request)
 {
    return "appuser update";
