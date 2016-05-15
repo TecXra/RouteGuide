@@ -39,12 +39,17 @@ public function busstore(Request $request)
 }
 public function busedit($id)
 {
-    return "bus edit";
+      $bus = Bus::findOrFail($id);
+      return view('fyp.busedit',compact('bus'));
+
 
 }
 public function busupdate($id, Request $request)
 {
-   return "bus update";
+      $bus = Bus::findOrFail($id);
+      $input = $request->all();
+      $bus->fill($input)->save();
+      return redirect('bus');
   
 }
 public function busshow($id)
@@ -55,7 +60,9 @@ public function busshow($id)
 public function busdelete($id)
 {
    
-    return "bus delete";
+      $bus = Bus::findOrFail($id);
+      $bus->delete();
+      return redirect('bus');
 }
 
 
@@ -73,6 +80,9 @@ public function stopcreate()
 }
 public function stopstore(Request $request)
 {
+
+            $stop= Stop::create($request->all());
+            $stop->save();
             return redirect('stop');
 }
 
@@ -83,21 +93,26 @@ public function stopshow($id)
 
 public function stopedit($id)
 {
-    return "stop edit";
+      $stop = Stop::findOrFail($id);
+      return view('fyp.stopedit',compact('stop'));
 
 }
 
 
 public function stopupdate($id, Request $request)
 {
-   return "stop update";
-  
+      $stop = Stop::findOrFail($id);
+      $input = $request->all();
+      $stop->fill($input)->save();
+      return redirect('stop');
 }
 
 public function stopdelete($id)
 {
    
-    return "stop delete";
+      $stop = Bus::findOrFail($id);
+      $stop->delete();
+      return redirect('stop');
 }
 
 
@@ -114,16 +129,22 @@ public function routedata()
 }
 public function routecreate()
 {
+
       return "route create";
+      
 }
 public function routestore(Request $request)
 {
-            return redirect('route');
+
+      $route= Route::create($request->all());
+      $route->save();
+      return redirect('route');
 }
 
 public function routeedit($id)
 {
-    return "route edit";
+      $route = Route::findOrFail($id);
+      return view('fyp.routeedit',compact('route'));
 
 }
 
@@ -134,14 +155,19 @@ public function routeshow($id)
 
 public function routeupdate($id, Request $request)
 {
-   return "route update";
-  
+      $route = Route::findOrFail($id);
+      $input = $request->all();
+      $route->fill($input)->save();
+      return redirect('search'); 
 }
 
 public function routedelete($id)
 {
    
-    return "route delete";
+    
+      $route = Route::findOrFail($id);
+      $route->delete();
+      return redirect('route');
 }
 
 
@@ -161,12 +187,16 @@ public function searchcreate()
 }
 public function searchstore(Request $request)
 {
-            return redirect('search');
+
+      $search= Search::create($request->all());
+      $search->save();
+      return redirect('search');
 }
 
 public function searchedit($id)
 {
-    return "search edit";
+      $search = Search::findOrFail($id);
+      return view('fyp.searchedit',compact('search'));
 
 }
 
@@ -177,14 +207,18 @@ public function searchshow($id)
 }
 public function searchupdate($id, Request $request)
 {
-   return "search update";
-  
+      $search = Search::findOrFail($id);
+      $input = $request->all();
+      $search->fill($input)->save();
+      return redirect('search');  
 }
 
 public function searchdelete($id)
 {
    
-    return "search delete";
+      $search = Serach::findOrFail($id);
+      $search->delete();
+      return redirect('search');
 }
 
 
@@ -203,30 +237,40 @@ public function appusercreate()
 }
 public function appuserstore(Request $request)
 {
-            return redirect('appuser');
+      $appuser= Appuser::create($request->all());
+      $appuser->save();
+      return redirect('appuser');
 }
 
 public function appuseredit($id)
 {
-    return "appuser edit";
+      $appuser = Appuser::findOrFail($id);
+      return view('fyp.appuseredit',compact('appuser'));
+
 
 }
 
 
 public function appusershow($id)
-{
-      return "specific appuser";
+{ 
+      return "app user show";
 }
 public function appuserupdate($id, Request $request)
 {
-   return "appuser update";
-  
+ 
+      $appuser = AppUser::findOrFail($id);
+      $input = $request->all();
+      $appuser->fill($input)->save();
+      return redirect('appuser'); 
 }
 
 public function appuserdelete($id)
 {
    
-    return "appuser delete";
+    
+      $appuser = AppUser::findOrFail($id);
+      $appuser->delete();
+      return redirect('appuser');
 }
 
 

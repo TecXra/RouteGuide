@@ -85,7 +85,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
  Route::get('bus/create','fypController@buscreate');
  Route::get('bus/{id}/edit','fypController@busedit');
  Route::get('bus/{id}/delete', 'fypController@busdelete'); 
-
+ Route::get('bus/{id}/show', 'fypController@busshow');
+    
 
 // Stop CRUD operation
  Route::get('stop', 'fypController@stopdata');
@@ -93,7 +94,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
  Route::get('stop/create','fypController@stopcreate');
  Route::get('stop/{id}/edit','fypController@stopedit');
  Route::get('stop/{id}/delete', 'fypController@stopdelete'); 
-
+ Route::get('stop/{id}/show', 'fypController@stopshow');
 
 // Route CRUD operation
  Route::get('route', 'fypController@routedata');
@@ -101,7 +102,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
  Route::get('route/create','fypController@routecreate');
  Route::get('route/{id}/edit','fypController@routeedit');
  Route::get('route/{id}/delete', 'fypController@routedelete'); 
-
+ Route::get('route/{id}/show', 'fypController@routeshow');
 
 
 // AppUser CRUD operation
@@ -110,7 +111,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
  Route::get('appuser/create','fypController@appusercreate');
  Route::get('appuser/{id}/edit','fypController@appuseredit');
  Route::get('appuser/{id}/delete', 'fypController@appuserdelete'); 
-
+ Route::get('appuser/{id}/show', 'fypController@appusershow');
 
 
 // Search CRUD operation
@@ -119,5 +120,5 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
  Route::get('search/create','fypController@searchcreate');
  Route::get('search/{id}/edit','fypController@searchedit');
  Route::get('search/{id}/delete', 'fypController@searchdelete'); 
-
+ Route::get('search/{id}/show', 'fypController@searchshow');
 
