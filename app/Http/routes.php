@@ -79,9 +79,18 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
 
 
+// Bus CRUD operation
  Route::get('bus', 'fypController@busdata');
  Route::post('bus', 'fypController@busstore');
  Route::get('bus/create','fypController@buscreate');
+ Route::get('bus/{id}/edit','fypController@busedit');
+Route::get('bus/{id}/delete', 'fypController@busdelete'); 
+
+
+
+
+
+
 
 
 

@@ -37,10 +37,52 @@ public function busstore(Request $request)
             $imageCompletePath = '/farelist/'. $imageName ;
             $request->file('farelist')->move(base_path() . '/public/farelist/', $imageName);
             $bus->update(array('farelist' => $imageCompletePath));
+            return redirect('bus');
+}
+
+
+
+public function busstore(Request $request)
+{
+            $bus= Bus::create($request->all());
+            $bus->save();
+            $imageName = $bus->id . '_list.' .
+            $request->file('farelist')->getClientOriginalExtension();
+            $imageCompletePath = '/farelist/'. $imageName ;
+            $request->file('farelist')->move(base_path() . '/public/farelist/', $imageName);
+            $bus->update(array('farelist' => $imageCompletePath));
 
             return redirect('bus');
+}
+
+
+
+public function busedit($id)
+{
+    return "bus edit";
 
 }
+
+
+public function busupdate($id, Request $request)
+{
+   return "bus update";
+  
+}
+
+public function busdelete($id)
+{
+   
+    return "bus delete";
+}
+
+
+
+
+
+
+
+
 
 
 
