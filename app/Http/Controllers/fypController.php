@@ -74,16 +74,21 @@ public function stopdata()
 {
       return "stop";
 }
+
 public function stopcreate()
 {
       return "stop create";
 }
+
+
 public function stopstore(Request $request)
 {
 
             $stop= Stop::create($request->all());
             $stop->save();
-            return redirect('stop');
+            
+            return "stop data stored";
+            //return redirect('stop');
 }
 
 public function stopshow($id)

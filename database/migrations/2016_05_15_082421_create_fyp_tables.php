@@ -60,15 +60,10 @@ class CreateFypTables extends Migration
 
 
                Schema::create('searches', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('stop_id')->unsigned();
-            $table->foreign('stop_id')
+            $table->integer('route_id')->unsigned();
+            $table->foreign('route_id')
                   ->references('id')
-                  ->on('stops');
-            $table->integer('bus_id')->unsigned();
-            $table->foreign('bus_id')
-                  ->references('id')
-                  ->on('buses');
+                  ->on('routes');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')
                   ->references('id')

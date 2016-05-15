@@ -8,15 +8,10 @@ class Search extends Model
 {
     protected $fillable = ['stop_id','bus_id','user_id'];
 
-public function Bus()
+public function Route()
     {
-        return $this->belongsTo('App\Bus');
+        return $this->belongsTo('App\Route');
 
-    }
-
-public function Stop()
-    {
-        return $this->belongsTo('App\Stop');
     }
 
 public function Appuser()
