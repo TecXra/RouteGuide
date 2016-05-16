@@ -74,5 +74,4 @@
         </div>
     @endif
 
-@endsection
 @stop

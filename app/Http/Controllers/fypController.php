@@ -20,7 +20,9 @@ class fypController extends Controller
 
 public function busdata()
 {
-	return "bus";
+      //$bus=Bus::all();
+      //dd($bus);
+	return view('fyp.busdata');
 }
 public function buscreate()
 {
@@ -72,6 +74,9 @@ public function busdelete($id)
 
 public function stopdata()
 {
+      $stop=Stop::all();
+      dd($stop); 
+      
       return "stop";
 }
 
