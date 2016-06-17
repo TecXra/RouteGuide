@@ -8,16 +8,10 @@ class Route extends Model
 {
     protected $fillable = [ 'bus_id','stop_id'];
 
-
-
-
 public function Bus()
     {
         return $this->belongsTo('App\Bus');
-
     }
-
-
 
 public function Stop()
     {

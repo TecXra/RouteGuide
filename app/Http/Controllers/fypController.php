@@ -15,19 +15,28 @@ class fypController extends Controller
 {
     
 
+//public function __construct()
+//{
+ //     $this->middleware('auth');
+//}
+
 
 // Bus CRUD
 
 public function busdata()
 {
-      //$bus=Bus::all();
-      //dd($bus);
-	return view('fyp.busdata');
+      $bus=Bus::all();
+      
+      return view('fyp.busdata',compact('bus'));
 }
+
+
 public function buscreate()
 {
-	return "buscreate";
+      return view('fyp.buscreate');
 }
+
+
 public function busstore(Request $request)
 {
 		$bus= Bus::create($request->all());
@@ -39,13 +48,15 @@ public function busstore(Request $request)
             $bus->update(array('farelist' => $imageCompletePath));
             return redirect('bus');
 }
+
+
 public function busedit($id)
 {
       $bus = Bus::findOrFail($id);
       return view('fyp.busedit',compact('bus'));
-
-
 }
+
+
 public function busupdate($id, Request $request)
 {
       $bus = Bus::findOrFail($id);
@@ -54,9 +65,11 @@ public function busupdate($id, Request $request)
       return redirect('bus');
   
 }
+
 public function busshow($id)
 {
-      return "specific bus";
+      $bus = Bus::findOrFail($id);
+      return view('fyp.busedit',compact('bus'));
 }
 
 public function busdelete($id)
@@ -75,14 +88,12 @@ public function busdelete($id)
 public function stopdata()
 {
       $stop=Stop::all();
-      dd($stop); 
-      
-      return "stop";
+      return view('fyp.stopdata',compact('stop'));
 }
 
 public function stopcreate()
 {
-      return "stop create";
+      return view('fyp.stopcreate');
 }
 
 
@@ -91,14 +102,12 @@ public function stopstore(Request $request)
 
             $stop= Stop::create($request->all());
             $stop->save();
-            
-            return "stop data stored";
-            //return redirect('stop');
+            return redirect('stop');
 }
 
 public function stopshow($id)
-{
-      return "specific stop";
+{     $stop = Stop::findOrFail($id);
+      return view('fyp.stopshow',compact('stop'));
 }
 
 public function stopedit($id)
@@ -135,7 +144,7 @@ public function stopdelete($id)
 
 public function routedata()
 {
-      return "route";
+      return view('fyp.routedata',compact());
 }
 public function routecreate()
 {

@@ -48,7 +48,7 @@ $table->timestamps();
             $table->increments('id');
             $table->integer('bus_id')->unsigned();
             $table->integer('stop_id')->unsigned();
-$table->timestamps();
+            $table->timestamps();
             $table->foreign('bus_id')
                 ->references('id')
                 ->on('buses');

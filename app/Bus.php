@@ -14,7 +14,8 @@ protected $fillable = [
 		'farelist',
 		'status',
 		'starttime',
-		'endtime'
+		'endtime',
+        'busnumber'
 		];
 
 

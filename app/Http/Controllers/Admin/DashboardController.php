@@ -5,6 +5,7 @@ use App\Article;
 use App\ArticleCategory;
 use App\User;
 use App\Photo;
+use App\stop;
 use App\PhotoAlbum;
 
 class DashboardController extends AdminController {
@@ -24,6 +25,7 @@ class DashboardController extends AdminController {
         $users = User::count();
         $photo = Photo::count();
         $photoalbum = PhotoAlbum::count();
-		return view('admin.dashboard.index',  compact('title','news','newscategory','photo','photoalbum','users'));
+        $stop = stop::count();
+		return view('admin.dashboard.index',  compact('title','news','stop','newscategory','photo','photoalbum','users'));
 	}
 }

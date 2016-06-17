@@ -65,6 +65,14 @@
                         <i class="glyphicon glyphicon-user"></i> Users
                     </a>
                 </li>
+
+<li>
+                    <a href="{{url('sitestop')}}">
+                        <i class="glyphicon glyphicon-like"></i> Stops
+                    </a>
+                </li>
+                
+
                 <li>
                     <a href="{{ URL::to('auth/logout') }}"><i class="fa fa-sign-out"></i> Logout</a>
                 </li>

@@ -12,7 +12,6 @@ Route::pattern('slug', '[0-9a-z-_]+');
 
 /***************    Site routes  **********************************/
 Route::get('/', 'HomeController@index');
-
 Route::get('home', 'HomeController@index');
 Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
@@ -28,11 +27,7 @@ Route::controllers([
 ]);
 
 /***************    Admin routes  **********************************/
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
-
-    
-
-
+    Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     # Admin Dashboard
     Route::get('dashboard', 'Admin\DashboardController@index');
     
@@ -79,52 +74,84 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('user/{user}/edit', 'Admin\UserController@edit');
     Route::get('user/{user}/delete', 'Admin\UserController@delete');
     Route::resource('user', 'Admin\UserController');
+
+    
+
+
 });
 
 
 
 
+Route::group(['prefix' => 'ali', 'middleware' => 'auth'], function() {
+
+
+Route::get('dashboard', 'Admin\DashboardController@index');
+
+Route::get('bus/create','fypController@buscreate');
+Route::get('bus/{id}/edit','fypController@busedit');
+Route::get('bus/{id}/delete', 'fypController@busdelete'); 
+
+
+ Route::get('stop/create','fypController@stopcreate');
+ Route::get('stop/{id}/edit','fypController@stopedit');
+ Route::get('stop/{id}/delete', 'fypController@stopdelete'); 
+
+
+
+ Route::get('route/create','fypController@routecreate');
+ Route::get('route/{id}/edit','fypController@routeedit');
+ Route::get('route/{id}/delete', 'fypController@routedelete'); 
+
+
+   
+ Route::get('appuser/create','fypController@appusercreate');
+ Route::get('appuser/{id}/edit','fypController@appuseredit');
+ Route::get('appuser/{id}/delete', 'fypController@appuserdelete'); 
+
+
+ Route::get('search/create','fypController@searchcreate');
+ Route::get('search/{id}/edit','fypController@searchedit');
+ Route::get('search/{id}/delete', 'fypController@searchdelete'); 
+
+
+});
+
+
 // Bus CRUD operation
- 
  Route::get('bus', 'fypController@busdata');
  Route::post('bus', 'fypController@busstore');
- Route::get('bus/create','fypController@buscreate');
- Route::get('bus/{id}/edit','fypController@busedit');
- Route::get('bus/{id}/delete', 'fypController@busdelete'); 
  Route::get('bus/{id}/show', 'fypController@busshow');
     
 
 // Stop CRUD operation
  Route::get('stop', 'fypController@stopdata');
  Route::post('stop', 'fypController@stopstore');
- Route::get('stop/create','fypController@stopcreate');
- Route::get('stop/{id}/edit','fypController@stopedit');
- Route::get('stop/{id}/delete', 'fypController@stopdelete'); 
  Route::get('stop/{id}/show', 'fypController@stopshow');
 
 // Route CRUD operation
  Route::get('route', 'fypController@routedata');
  Route::post('route', 'fypController@routestore');
- Route::get('route/create','fypController@routecreate');
- Route::get('route/{id}/edit','fypController@routeedit');
- Route::get('route/{id}/delete', 'fypController@routedelete'); 
  Route::get('route/{id}/show', 'fypController@routeshow');
 
 
 // AppUser CRUD operation
  Route::get('appuser', 'fypController@appuserdata');
  Route::post('appuser', 'fypController@appuserstore');
- Route::get('appuser/create','fypController@appusercreate');
- Route::get('appuser/{id}/edit','fypController@appuseredit');
- Route::get('appuser/{id}/delete', 'fypController@appuserdelete'); 
  Route::get('appuser/{id}/show', 'fypController@appusershow');
 
 
 // Search CRUD operation
  Route::get('search', 'fypController@searchdata');
  Route::post('search', 'fypController@searchstore');
- Route::get('search/create','fypController@searchcreate');
- Route::get('search/{id}/edit','fypController@searchedit');
- Route::get('search/{id}/delete', 'fypController@searchdelete'); 
  Route::get('search/{id}/show', 'fypController@searchshow');
+
+Route::get('sitebus', 'SiteController@buslist');
+Route::get('sitestop', 'SiteController@stoplist');
+Route::get('sitebusroute/{id}', 'SiteController@busroute');
+Route::get('sitebusdetail/{id}', 'SiteController@busdetail');
+Route::get('sitestopbus/{id}', 'SiteController@stopbus');
+
+Route::get('gittest', 'SiteController@stopbus');
+
 

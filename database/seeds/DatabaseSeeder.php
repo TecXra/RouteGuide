@@ -22,6 +22,13 @@ class DatabaseSeeder extends Seeder
 		$this->call(ArticleCategoryTableSeeder::class);
 		$this->call(ArticleTableSeeder::class);
 
+        $this->call(AppDataSeeder::class);
+        $this->command->info('Some Dummy Data is Inserted');
+        
+
+
+
+
         Model::reguard();
     }
 }

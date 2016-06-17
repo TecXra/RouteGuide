@@ -18,6 +18,7 @@
 		<link href="{{ asset('css/site.css') }}" rel="stylesheet">
         <script src="{{ asset('js/site.js') }}"></script>
 
+
     @yield('styles')
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,18 +27,16 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <link rel="shortcut icon" href="{!! asset('assets/site/ico/favicon.ico')  !!} ">
+    <link rel="shortcut icon" href="{!! asset('assets/site/ico/favicon.ico')  !!}" />
 </head>
 <body>
-@include('partials.nav')
+
 
 <div class="container">
+
 @yield('content')
 </div>
-@include('partials.footer')
 
-<!-- Scripts -->
-@yield('scripts')
 
 </body>
 </html>
