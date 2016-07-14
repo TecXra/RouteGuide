@@ -179,8 +179,8 @@ Route::get('gittest', 'SiteController@stopbus');
 
     Route::resource('stop', 'StopController');
     Route::resource('bus', 'BusController');
-
-    Route::get('stop', 'StopController@index');
+//chanred from stop to ruko
+    Route::get('ruko', 'StopController@index');
 //    Route::get('stop/{id}/route', 'StopController@stoproute');
 
     Route::get('stop/{id}', 'StopController@show');
