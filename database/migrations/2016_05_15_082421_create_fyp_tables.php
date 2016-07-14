@@ -14,7 +14,7 @@ class CreateFypTables extends Migration
     {
         Schema::create('buses', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('busnumber');
+            $table->string('busnumber');
             $table->string('sourceterminal');
             $table->string('destinationterminal');
             $table->string('companyname');

@@ -83,6 +83,10 @@ Route::controllers([
 
 
 
+
+
+
+
 Route::group(['prefix' => 'ali', 'middleware' => 'auth'], function() {
 
 
@@ -153,5 +157,69 @@ Route::get('sitebusdetail/{id}', 'SiteController@busdetail');
 Route::get('sitestopbus/{id}', 'SiteController@stopbus');
 
 Route::get('gittest', 'SiteController@stopbus');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   //  final routes
+
+
+    Route::resource('stop', 'StopController');
+    Route::resource('bus', 'BusController');
+
+    Route::get('stop', 'StopController@index');
+//    Route::get('stop/{id}/route', 'StopController@stoproute');
+
+    Route::get('stop/{id}', 'StopController@show');
+    
+
+    Route::get('bus', 'BusController@index');
+   // Route::get('bus/{id}/route', 'BusController@busroute');
+
+    Route::get('bus/{id}', 'BusController@show');
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
