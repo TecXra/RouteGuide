@@ -16,6 +16,7 @@ input[type='text']{
 <div class="container">
     <h1 style="color:lightgreen">Bus Create</h1>
 <hr>
+<hr>
 {!! Form :: open(['url'=>'bus','files' => true]) !!}
 
 <div class="form-group"style="border: red 4px lightgreen">
@@ -57,7 +58,7 @@ input[type='text']{
     {!! Form :: label('starttime','Start Time') !!}
     {!! Form :: input('date','starttime',date('Y-m-d'),['class' => 'form-control']) !!}
 </div>
-
+<div class="">hello this is ali raza</div>
 
 
 <div class = "form-group">

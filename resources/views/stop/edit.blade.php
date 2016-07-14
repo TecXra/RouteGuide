@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title></title>
@@ -8,14 +8,21 @@
 input[type='text']{
 	border: solid lightgreen 4px; 
 }
-	</style>
+
+input[type='input']{
+border: solid lightgreen 4px;
+
 }
+	</style>
+
 </head>
 <body style="color: lightgreen">
 @include('partials.nav')
 <div class="container">
 	<h1 style="color:lightgreen">Stop Edit</h1>
 <hr>
+<hr>
+<div class="container">hi this is ali raza </div> 
 {!! Form :: 
     model( $stop,
          ['method'=>'PATCH','action'=>['StopController@update',$stop->id ]]) !!}
@@ -35,7 +42,7 @@ input[type='text']{
     {!! Form::text('latitude', null, ['class' => 'form-control']) !!}
 </div>
 
-<div class = "form-group">
+<div class = "form-group"style="border: red 4px lightgreen">
 
     {!! Form :: label('published_at','Published On :') !!}
     {!! Form :: input('date','published_at',date('Y-m-d'),['class' => 'form-control']) !!}
