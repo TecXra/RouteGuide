@@ -190,7 +190,7 @@ Route::get('gittest', 'SiteController@stopbus');
    // Route::get('bus/{id}/route', 'BusController@busroute');
 
     Route::get('bus/{id}', 'BusController@show');
-  
+    Route::get('ali','BusController@index');
 
 
 
