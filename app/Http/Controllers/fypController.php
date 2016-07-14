@@ -27,7 +27,7 @@ public function busdata()
 {
       $bus=Bus::all();
       
-      return view('fyp.busdata',compact('bus'));
+      return  $bus;
 }
 
 
@@ -69,7 +69,7 @@ public function busupdate($id, Request $request)
 public function busshow($id)
 {
       $bus = Bus::findOrFail($id);
-      return view('fyp.busedit',compact('bus'));
+      return $bus;
 }
 
 public function busdelete($id)
