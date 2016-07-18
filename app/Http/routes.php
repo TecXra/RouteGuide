@@ -11,7 +11,13 @@ Route::pattern('id', '[0-9]+');
 Route::pattern('slug', '[0-9a-z-_]+');
 
 /***************    Site routes  **********************************/
-Route::get('/', 'HomeController@index');
+
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+//Route::get('/', 'HomeController@index');
 Route::get('home', 'HomeController@index');
 Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
@@ -79,6 +85,10 @@ Route::controllers([
 
 
 });
+
+
+
+
 
 
 
@@ -153,5 +163,69 @@ Route::get('sitebusdetail/{id}', 'SiteController@busdetail');
 Route::get('sitestopbus/{id}', 'SiteController@stopbus');
 
 Route::get('gittest', 'SiteController@stopbus');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   //  final routes
+
+
+    Route::resource('stop', 'StopController');
+    Route::resource('bus', 'BusController');
+//chanred from stop to ruko
+    Route::get('ruko', 'StopController@index');
+//    Route::get('stop/{id}/route', 'StopController@stoproute');
+
+    Route::get('stop/{id}', 'StopController@show');
+    
+
+    Route::get('bus', 'BusController@index');
+   // Route::get('bus/{id}/route', 'BusController@busroute');
+
+    Route::get('bus/{id}', 'BusController@show');
+    Route::get('ali','BusController@index');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

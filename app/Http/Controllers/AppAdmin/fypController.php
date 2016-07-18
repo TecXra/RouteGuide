@@ -11,25 +11,16 @@ use App\Route;
 use App\Appuser;
 use App\Http\Controllers\Controller;
 
-class fypController extends Controller
+class fypController extends AdminController
 {
     
-
-//public function __construct()
-//{
- //     $this->middleware('auth');
-//}
-
-
 // Bus CRUD
 
 public function busdata()
 {
       $bus=Bus::all();
       
-
-      return  $bus;
-
+      return view('fyp.busdata',compact('bus'));
 }
 
 
@@ -71,7 +62,7 @@ public function busupdate($id, Request $request)
 public function busshow($id)
 {
       $bus = Bus::findOrFail($id);
-      return $bus;
+      return view('fyp.busedit',compact('bus'));
 }
 
 public function busdelete($id)

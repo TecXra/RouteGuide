@@ -14,11 +14,16 @@ protected $fillable = [
 		];
 
 
-    public function routes()
-    {
-        return $this->hasMany('App\Route');
-    }
+   // public function routes()
+   // {
+  //      return $this->hasMany('App\Route');
+  //  }
 
+
+  public function buses()
+    {
+        return $this->belongsToMany('App\Bus', 'routes','stop_id','bus_id');
+    }
 
 
     public function searches()

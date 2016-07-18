@@ -20,10 +20,16 @@ protected $fillable = [
 
 
 
-    public function routes()
+//    public function routes()
+//    {
+//        return $this->hasMany('App\Route');
+//    }
+     
+     public function stops()
     {
-        return $this->hasMany('App\Route');
+        return $this->belongsToMany('App\Stop', 'routes','bus_id','stop_id');
     }
+
 
 
 
