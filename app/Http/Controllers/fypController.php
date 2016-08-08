@@ -154,6 +154,19 @@ public function routecreate()
       return "route create";
       
 }
+
+
+public function aliraza()
+{
+
+  return view('fyp.routedata');
+      
+}
+
+
+
+
+
 public function routestore(Request $request)
 {
 
